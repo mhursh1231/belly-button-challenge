@@ -1,10 +1,3 @@
-// Function to handle changes in dropdown selection
-function optionChanged(newSample) {
-    buildMetadata(newSample, function(wfreq) {
-        buildGaugeChart(wfreq);
-    });
-}
-
 // Fetch the JSON data and call the provided callback function with the metadata
 function buildMetadata(sample, callback) {
     d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
@@ -36,8 +29,6 @@ function buildGaugeChart(wfreq) {
     // Retrieve all the data
     d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
          let metadata = data.metadata;
-        //  let resultArray = metadata.filter(result => result.id == sample);
-        //  let result = resultArray[0];
          // Make the gauge chart
          let gaugeData = [
              {

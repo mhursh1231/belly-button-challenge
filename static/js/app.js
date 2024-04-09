@@ -1,9 +1,3 @@
-// Function to handle changes in dropdown selection
-function optionChanged(newSample) {
-  console.log("New sample selected:", newSample);
-  buildCharts(newSample);
-  buildMetadata(newSample);
-}
 // Fetch the JSON data and console log it
 function buildMetadata(sample){
     d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
@@ -52,7 +46,7 @@ function buildBarChart(sample) {
       margin: { t: 30, l: 150 }
     };
     Plotly.newPlot("bar", barData, barLayout);
-  }); // Close the .then() method for d3.json
+  }); 
 }
 
 // Function to build a Bubble Chart
@@ -116,7 +110,9 @@ function optionChanged(value) {
   // Log the new value
   console.log(value);
   // Call all functions
-  buildMetadata(value);
+  buildMetadata(value, function(wfreq) {
+      buildGaugeChart(wfreq);
+  });
   buildBarChart(value);
   buildBubbleChart(value);
 }
