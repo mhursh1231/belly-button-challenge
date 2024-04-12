@@ -38,6 +38,8 @@ The following task is advanced and therefore optional.
   * You will need to modify the example gauge code to account for values ranging from 0 through 9.
   * Update the chart whenever a new sample is selected.
 
+![Screenshot 2024-04-11 at 20 51 24](https://github.com/mhursh1231/belly-button-challenge/assets/149441646/da75072c-664a-4d34-ba64-50889b03443d)
+
 # Hints
   * Use 'console.log' inside of your JavaScript code to see what your data looks like at each step.
   * Refer to the 'Plotly.js documentation'. when building the plots.
